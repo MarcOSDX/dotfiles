@@ -9,7 +9,7 @@ echo "Begin installation of marcos-roropeza dotfiles..."
 
 if [[ ! -d $HOME/.vimrc ]]; then
   echo "Clone a vimrc configuration..."
-  git clone --recursive https://github.com/marcos-roropeza/vimrc $HOME/.vim
+  git clone --recursive https://github.com/MarcOSDX/vimrc $HOME/.vim
   echo "Done"
 else
   echo "vimrc are installed..."

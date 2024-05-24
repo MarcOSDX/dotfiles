@@ -16,6 +16,6 @@ indent_size = 4
 indent_style = space
 indent_size = 4
 
-[{*.hs,*.ex,*.exs,*.r,*.html,*.pl,*.scala,*.xml,*.sbt,*.yml,*.dart,*.sc}]
+[{*.hs,*.ex,*.exs,*.r,*.html,*.pl,*.scala,*.xml,*.sbt,*.yml,*.yaml,*.dart}]
 indent_style = space
 indent_size = 2

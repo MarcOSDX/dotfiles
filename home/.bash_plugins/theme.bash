@@ -47,13 +47,13 @@ __lambda() {
 	# Processing all variables using for print plugins like: `aws_profile: test`
     local PLUGIN_PROMPT=""
     if [[ ! -z $HOST_IP && ! -z $AWS_PROFILE && ! -z $GIT_BRANCH ]]; then
-        PLUGIN_PROMPT=" (${BOLD}host_ip:${STOP}${HOST_IP_PROMPT} ${BOLD}branch:${STOP}${GIT_PROMPT} ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT}) "
+        PLUGIN_PROMPT=" (${BOLD}host_ip:${STOP}${HOST_IP_PROMPT}, ${BOLD}branch:${STOP}${GIT_PROMPT}, ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT}) "
 	elif [[ ! -z $HOST_IP && ! -z $AWS_PROFILE ]]; then
-		PLUGIN_PROMPT=" (${BOLD}host_ip: ${STOP}${HOST_IP_PROMPT} ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT})"
+		PLUGIN_PROMPT=" (${BOLD}host_ip: ${STOP}${HOST_IP_PROMPT}, ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT})"
 	elif [[ ! -z $HOST_IP && ! -z $GIT_BRANCH ]]; then
-		PLUGIN_PROMPT=" (${BOLD}host_ip: ${STOP}${HOST_IP_PROMPT} ${BOLD}branch:${STOP}${GIT_PROMPT})" 
+		PLUGIN_PROMPT=" (${BOLD}host_ip: ${STOP}${HOST_IP_PROMPT}, ${BOLD}branch:${STOP}${GIT_PROMPT})" 
 	elif [[ ! -z $GIT_BRANCH && ! -z $AWS_PROFILE ]]; then
-		PLUGIN_PROMPT=" (${BOLD}branch:${STOP}${GIT_PROMPT} ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT})"
+		PLUGIN_PROMPT=" (${BOLD}branch:${STOP}${GIT_PROMPT}, ${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT})"
     elif [[ ! -z $AWS_PROFILE ]]; then
         PLUGIN_PROMPT=" (${BOLD}aws_profile: ${STOP}${AWS_PROFILE_PROMPT})" 
     elif [[ ! -z $GIT_BRANCH ]]; then

@@ -11,6 +11,7 @@ if [ ! -d $HOME/.vimrc ]; then
   echo "[INFO VIMRC] Clone a vimrc configuration..."
 
   git clone --recursive git@github.com:MarcOSDX/vimrc.git ${HOME}/.vim > /tmp/output.log 2> /tmp/output.log
+  mkdir ${HOME}/vim_backup
 
   echo "[INFO VIMRC] Re-direct output to /tmp/output.log"
   echo "[INFO VIMRC] Done"

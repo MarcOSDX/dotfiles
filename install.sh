@@ -30,3 +30,5 @@ if [ -f /usr/bin/stow ]; then
 else
   echo "[ERROR BASH] Please install stow for continue"
 fi
+
+echo "[INFO] Done"

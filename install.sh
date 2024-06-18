@@ -5,27 +5,28 @@
 # Email: marcosroropeza@duck.com
 #
 
-echo "Begin installation of marcos-roropeza dotfiles..."
+echo "[INFO] Begin installation of marcos-roropeza dotfiles..."
 
-if [[ ! -d $HOME/.vimrc ]]; then
-  echo "Clone a vimrc configuration..."
-  git clone --recursive https://github.com/MarcOSDX/vimrc $HOME/.vim
-  echo "Done"
+if [ ! -d $HOME/.vimrc ]; then
+  echo "[INFO VIMRC] Clone a vimrc configuration..."
+
+  git clone --recursive git@github.com:MarcOSDX/vimrc.git ${HOME}/.vim > /tmp/output.log 2> /tmp/output.log
+
+  echo "[INFO VIMRC] Re-direct output to /tmp/output.log"
+  echo "[INFO VIMRC] Done"
 else
-  echo "vimrc are installed..."
+  echo "[ERROR VIMRC] Directory vimrc in ${HOME}/.vim exists"
 fi
 
-if [[ -f /usr/bin/stow ]]; then
-  echo "Backup and remove a current .bashrc file..."
+if [ -f /usr/bin/stow ]; then
+  echo "[INFO BASH] Backup and remove a current .bashrc file..."
   cp ~/.bashrc ~/.bashrc.bkp
   rm ~/.bashrc
-  echo "Done"
+  echo "[INFO BASH] Done"
 
-  echo "Apply stow..."
+  echo "[INFO BASH] Apply stow..."
   stow home
-  echo "Done"
+  echo "[INFO BASH] Done"
 else
-  echo "Please install stow for continue..."
+  echo "[ERROR BASH] Please install stow for continue"
 fi
-
-echo "Done"

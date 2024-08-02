@@ -21,3 +21,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Set tmp directory for TMUX
 export TMUX_TMPDIR=/tmp
+
+# Verify i f system running over WSL
+export IS_WSL=$(uname -a | grep "WSL" | wc -l)
+if [ ${IS_WSL} -eq 1 ]; then
+  export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
+fi
